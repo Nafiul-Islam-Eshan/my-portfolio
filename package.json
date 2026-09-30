@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@heroui/react": "^3.2.6",
     "@heroui/styles": "^3.2.6",
     "next": "16.3.6",
@@ -16,6 +17,7 @@
     "react-dom": "19.2.8"
   },
   "devDependencies": {
+    "@gravity-ui/icons": "^2.22.0",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
