@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { Envelope, EnvelopeOpen, LogoGithub, LogoLinkedin } from '@gravity-ui/icons';
 import Link from 'next/link';
 import ToolTipButton from './ToolTip';
+import BackToTop from './shared/BackToTop';
 
 
 const Footer = () => {
@@ -36,6 +37,7 @@ const Footer = () => {
                 <Link href='mailto:nafiulislameshan307@gmail.com' target='_blank'>
                     <ToolTipButton toolTipContent='Email' icon={<Envelope/>} />
                 </Link>
+                <BackToTop />
             </div>
         </footer>
     );
