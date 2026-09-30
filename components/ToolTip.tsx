@@ -15,7 +15,7 @@ const ToolTipButton = ({ toolTipContent, icon }: ToolTipButtonParams) => {
                     {icon}
                 </Button>
                 </div>
-                <Tooltip.Content className='scale-50 text-lg font-bold'>
+                <Tooltip.Content className='text-md font-bold'>
                     <p className='text-slate-900 '>{toolTipContent}</p>
                 </Tooltip.Content>
             </Tooltip>

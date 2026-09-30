@@ -1,8 +1,9 @@
 import Image from 'next/image';
-import { Envelope, EnvelopeOpen, LogoGithub, LogoLinkedin } from '@gravity-ui/icons';
+import { Envelope, Handset, LogoGithub, LogoLinkedin } from '@gravity-ui/icons';
 import Link from 'next/link';
 import ToolTipButton from './ToolTip';
 import BackToTop from './shared/BackToTop';
+import { IoLogoWhatsapp } from 'react-icons/io';
 
 
 const Footer = () => {
@@ -21,26 +22,35 @@ const Footer = () => {
                     <Image height='20' width='20' alt='Location icon' src='/location.png' className='scale-70' />
                     Faruki House, Gangchor, Cumilla, Bangladesh.
                 </p>
-                {/* Email */}
+                {/* Mobile */}
                 <p className="flex gap-2 items-center">
-                    <EnvelopeOpen className='text-[#50C8E1]' />
-                    <Link href='mailto:nafiulislameshan307@gmail.com' className="hover:scale-102 hover:text-amber-600 transition-all duration-75">nafiulislameshan307@gmail.com</Link>
+                    <Handset className='text-[#50C8E1]' />
+                    +8801905515736 , +8801540642138(WhatsApp)
                 </p>
             </div>
-            <div className="flex gap-2">
-                <Link href='https://github.com/Nafiul-Islam-Eshan' target='_blank'>
-                    <ToolTipButton toolTipContent='GitHub' icon={<LogoGithub/>} />
-                </Link>
-                <Link href='https://www.linkedin.com/in/md-nafiul-islam-402802377/' target='_blank'>
-                    <ToolTipButton toolTipContent='Linkedin' icon={<LogoLinkedin/>} />
-                </Link>
-                <Link href='mailto:nafiulislameshan307@gmail.com' target='_blank'>
-                    <ToolTipButton toolTipContent='Email' icon={<Envelope/>} />
-                </Link>
-                <BackToTop />
+
+            <div className="flex flex-col gap-2 justify-center items-center">
+                <div className="flex gap-2">
+                    <Link href='https://github.com/Nafiul-Islam-Eshan' target='_blank'>
+                        <ToolTipButton toolTipContent='GitHub' icon={<LogoGithub />} />
+                    </Link>
+                    <Link href='https://www.linkedin.com/in/md-nafiul-islam-402802377/' target='_blank'>
+                        <ToolTipButton toolTipContent='Linkedin' icon={<LogoLinkedin />} />
+                    </Link>
+                    <Link href='mailto:nafiulislameshan307@gmail.com' target='_blank'>
+                        <ToolTipButton toolTipContent='Email' icon={<Envelope />} />
+                    </Link>
+                    <Link href={`https://wa.me/${process.env.WHATSAPP_NUMBER}?text=${encodeURIComponent(process.env.WHATSAPP_DEFAULT_TEXT as string)}`} target='_blank' rel="noopener noreferrer">
+                        <ToolTipButton toolTipContent='WhatsApp' icon={<IoLogoWhatsapp />} />
+                    </Link>
+                    <BackToTop />
+                </div>
+                <div className="text-slate-400">
+                    © 2026 Md. Nafiul Islam. All rights reserved.
+                </div>
             </div>
         </footer>
     );
 };
 
-export default Footer;
+export default Footer;  
