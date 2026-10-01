@@ -1,18 +1,28 @@
 "use client";
 import { Check } from "@gravity-ui/icons";
-import { Button, FieldError, Form, Input, Label, TextArea, TextField } from "@heroui/react";
+import {
+    Button,
+    FieldError,
+    Form,
+    Input,
+    Label,
+    Spinner,
+    TextArea,
+    TextField,
+    toast,
+} from "@heroui/react";
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
-import Loading from "./shared/Loading";
 
 
 const ContactMeForm = () => {
 
     const [isLoading, setIsLoading] = useState(false)
-    
+
     const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        const formData = new FormData(e.currentTarget);
+        const form = e.currentTarget
+        const formData = new FormData(form);
         const data = Object.fromEntries(formData.entries())
         // console.log(data, emailjs);
         setIsLoading(true)
@@ -21,13 +31,22 @@ const ContactMeForm = () => {
                 process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID as string,
                 process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_ID as string,
                 data,
-                {publicKey: process.env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY as string}
+                { publicKey: process.env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY as string }
             );
-            console.log("Send Sunccessfully");
-        } catch (error) {
-            console.error("Error sending email:", error);
+            toast.success("Message sent successfully!", {
+                description: "Thanks for reaching out. I'll get back to you soon.",
+
+            });
+            form.reset()
         }
-        finally{
+        catch (error) {
+            toast.danger("Failed to send message.", {
+                description: "Something went wrong. Please try again.",
+            });
+            console.log(error);
+
+        }
+        finally {
             setIsLoading(false)
         }
     };
@@ -79,12 +98,17 @@ const ContactMeForm = () => {
 
                 {/* Submit and Reset button */}
                 <div className="flex gap-2">
-                    <Button type="submit">
-                        <Check />
+                    <Button isDisabled={isLoading} type="submit">
                         {
-                            isLoading? <Loading/> : "Submit"
+                            isLoading ?
+                                <div className="flex gap-2">
+                                    <Spinner color="current" />
+                                    Sending...
+                                </div>
+                                :
+                                <span className="flex gap-2"><Check /> Submit</span>
                         }
-                        
+
                     </Button>
                     <Button type="reset" variant="secondary">
                         Reset

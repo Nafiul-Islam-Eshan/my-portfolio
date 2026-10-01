@@ -3,9 +3,10 @@ import { Fira_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
+import { Toast } from "@heroui/react";
 
 const firaSans = Fira_Sans({
-  weight: ["400", "500", "600", "700",'800'],
+  weight: ["400", "500", "600", "700", '800'],
   subsets: ['latin']
 })
 
@@ -21,9 +22,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${firaSans.className} h-full antialiased`}
     >
       <body className="min-h-screen flex flex-col bg-[#101419] text-slate-100">
-        <Navbar/>
-        <main className="grow">{children}</main>
-        <Footer/>
+        <Navbar />
+        <main className="grow">
+          {children}
+          <Toast.Provider />
+        </main>
+        <Footer />
       </body>
     </html>
   );
