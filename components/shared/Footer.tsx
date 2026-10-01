@@ -4,6 +4,7 @@ import Link from 'next/link';
 import ToolTipButton from '../ToolTip';
 import BackToTop from './BackToTop';
 import { IoLogoWhatsapp } from 'react-icons/io';
+import { FaInstagram } from 'react-icons/fa';
 
 
 const Footer = () => {
@@ -42,6 +43,9 @@ const Footer = () => {
                     </Link>
                     <Link href={`https://wa.me/${process.env.WHATSAPP_NUMBER}?text=${encodeURIComponent(process.env.WHATSAPP_DEFAULT_TEXT as string)}`} target='_blank' rel="noopener noreferrer">
                         <ToolTipButton toolTipContent='WhatsApp' icon={<IoLogoWhatsapp />} />
+                    </Link>
+                    <Link href="https://www.instagram.com/nafiulislam183?stkn=eHBpb3pncnhqOXoz" target='_blank' rel="noopener noreferrer">
+                        <ToolTipButton toolTipContent='Instagram' icon={<FaInstagram />} />
                     </Link>
                     <BackToTop />
                 </div>

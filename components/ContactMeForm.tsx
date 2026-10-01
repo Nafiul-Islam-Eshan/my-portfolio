@@ -98,7 +98,7 @@ const ContactMeForm = () => {
 
                 {/* Submit and Reset button */}
                 <div className="flex gap-2">
-                    <Button isDisabled={isLoading} type="submit">
+                    <Button isDisabled={isLoading} type="submit" className="fill-none border-3 border-teal-500">
                         {
                             isLoading ?
                                 <div className="flex gap-2">

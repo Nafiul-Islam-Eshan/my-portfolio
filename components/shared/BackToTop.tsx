@@ -32,6 +32,7 @@ const handleBackToTop = () => {
     <Button
       onPress={handleBackToTop}
       aria-label="Back to top"
+      className="fill-none border-3 border-teal-500"
     >
       Back to Top
     </Button>
