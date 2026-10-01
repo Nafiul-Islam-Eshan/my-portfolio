@@ -52,12 +52,12 @@ const ContactMeForm = () => {
     };
 
     return (
-        <div>
-            <h1 className="text-xl font-medium text-center">Contact Form</h1>
-            <p className="text-center text-gray-600">
+        <div className="px-5 mx-auto">
+            <h1 className="text-xl lg:text-2xl font-medium text-center">Let&apos;s Connect</h1>
+            <p className="text-center text-gray-400">
                 Feel free to reach out to me using the contact form below.
             </p>
-            <Form className="flex w-96 flex-col gap-3" onSubmit={handleFormSubmit}>
+            <Form className="flex flex-col gap-3" onSubmit={handleFormSubmit}>
                 {/* Name */}
                 <TextField
                     isRequired
