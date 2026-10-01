@@ -1,0 +1,58 @@
+"use client";
+import { Check } from "@gravity-ui/icons";
+import { Button, Description, FieldError, Form, Input, Label, TextField } from "@heroui/react";
+
+
+const ContactMeForm = () => {
+
+    const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        const formData = new FormData(e.currentTarget);
+        
+    };
+
+    return (
+        <div>
+            <h1 className="text-xl font-medium text-center">Contact Form</h1>
+            <Form className="flex w-96 flex-col gap-4" onSubmit={onSubmit}>
+                <TextField
+                    isRequired
+                    name="email"
+                    type="email"
+                    validate={(value) => {
+                        if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value)) {
+                            return "Please enter a valid email address";
+                        }
+                        return null;
+                    }}
+                >
+                    <Label>Email</Label>
+                    <Input placeholder="john@example.com" />
+                    <FieldError />
+                </TextField>
+                <TextField
+                    isRequired
+                    minLength={8}
+                    name="message"
+                    type="text"
+                    defaultValue="Assalamualaikum Nafiul! "
+                >
+                    <Label>Your Message</Label>
+                    <Input placeholder="Your Message" />
+                </TextField>
+                <div className="flex gap-2">
+                    <Button type="submit">
+                        <Check />
+                        Submit
+                    </Button>
+                    <Button type="reset" variant="secondary">
+                        Reset
+                    </Button>
+                </div>
+            </Form>
+
+        </div>
+    );
+};
+
+export default ContactMeForm;

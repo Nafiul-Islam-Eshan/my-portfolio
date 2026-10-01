@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import { Envelope, Handset, LogoGithub, LogoLinkedin } from '@gravity-ui/icons';
 import Link from 'next/link';
-import ToolTipButton from './ToolTip';
-import BackToTop from './shared/BackToTop';
+import ToolTipButton from '../ToolTip';
+import BackToTop from './BackToTop';
 import { IoLogoWhatsapp } from 'react-icons/io';
 
 
