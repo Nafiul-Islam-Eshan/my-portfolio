@@ -4,27 +4,33 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import logo from '@/app/favicon.ico'
+import { usePathname } from "next/navigation";
+import { Button } from "@heroui/react";
+import { ArrowRight } from "@gravity-ui/icons";
 
-type NavItemType ={
- name: string;
- href: string;
+type NavItemType = {
+  name: string;
+  href: string;
 }[]
+
+const navItems: NavItemType = [
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  { name: "Skills", href: "/skills" },
+  { name: "Tech Stack", href: "/tech-stack" },
+  { name: "Projects", href: "/projects" },
+  { name: "Contact", href: "/contact" },
+];
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const path = usePathname()
+  // console.log(path);
 
-  const navItems:NavItemType = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Skills", href: "#skills" },
-    { name: "Tech Stack", href: "#tech-stack" },
-    { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contact" },
-  ];
 
   return (
     <nav className="sticky top-0 z-1000 w-full border-b border-white/8 bg-[#090A0F]/95 text-white backdrop-blur-xl">
-      <div className="mx-auto flex h-19.5 max-w-360 items-center px-6 sm:px-8 lg:px-14">
+      <div className="mx-auto flex h-19.5 max-w-360 items-center justify-between px-6 sm:px-8 lg:px-14">
 
         {/* ───────────────── BRAND ───────────────── */}
         <Link
@@ -50,53 +56,49 @@ const Navbar = () => {
         </Link>
 
         {/* ───────────── DESKTOP NAVIGATION ───────────── */}
-        <div className="ml-auto hidden items-center gap-10 lg:flex">
-          {navItems.map((item, index) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className={`group relative py-2 text-[14px] font-medium transition-colors duration-200 ${
-                index === 0
-                  ? "text-[#B58CFF]"
-                  : "text-white/65 hover:text-white"
-              }`}
-            >
-              {item.name}
+        <div className="hidden items-center gap-10 lg:flex">
+          {
+            navItems.map((item, index) => {
+              const isActive = path === item.href;
+              return (
+                <Link
+                  key={index}
+                  href={item.href}
+                  className={`group relative py-2 text-[14px] font-medium transition-colors duration-200 ${isActive
+                    ? "text-[#1d96ff]"
+                    : "text-white/60 hover:text-white"
+                    }`}
+                >
+                  {item.name}
 
-              {/* Active indicator */}
-              {index === 0 && (
-                <>
-                  <span className="absolute -bottom-4.75 left-1/2 h-0.5 w-16 -translate-x-1/2 rounded-full bg-[#B58CFF]" />
+                  {/* Active indicator */}
+                  {isActive && (
+                    <>
+                      <span className="absolute -bottom-1.75 left-1/2 h-0.5 w-16 -translate-x-1/2 rounded-full bg-[#1d96ff]" />
 
-                  <span className="absolute -bottom-5.75 left-1/2 h-1.5 w-1.5 -translate-x-1/2 rounded-full bg-[#B58CFF] shadow-[0_0_10px_#B58CFF]" />
-                </>
-              )}
-            </Link>
-          ))}
+                      <span className="absolute -bottom-2.75 left-1/2 h-1.5 w-1.5 -translate-x-1/2 rounded-full bg-[#1d96ff] shadow-[0_0_10px_#55acf8]" />
+                    </>
+                  )}
+                </Link>
+              )
+            })
+          }
         </div>
 
-        {/* ───────────── DESKTOP ACTIONS ───────────── */}
+        {/* ──────────── DESKTOP ACTIONS ───────────── */}
         <div className="ml-10 hidden items-center gap-5 lg:flex">
 
           {/* Let's Connect */}
           <Link
             href="#contact"
-            className="group flex h-12 items-center gap-3 rounded-full bg-[#B58CFF] px-7 text-[14px] font-semibold text-[#0B0712] transition-all duration-300 hover:bg-[#C3A2FF] hover:shadow-[0_0_25px_rgba(181,140,255,0.25)]"
-          >
-            <span>Let&apos;s Connect</span>
 
-            <svg
-              className="h-4.5 w-4.5 transition-transform duration-300 group-hover:translate-x-1"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M5 12h14" />
-              <path d="m13 6 6 6-6 6" />
-            </svg>
+          >
+            <Button className="group flex items-center gap-2 rounded-full  bg-[#0485F7]  px-7 text-[14px] font-semibold  transition-all duration-200 hover:shadow-[0_0_20px_rgba(181,140,255,0.25)]">
+              <span>Let&apos;s Connect</span>
+              <ArrowRight className="h-4.5 w-4.5 transition-transform duration-300 group-hover:translate-x-1" />
+            </Button>
+
+
           </Link>
         </div>
 
@@ -139,30 +141,31 @@ const Navbar = () => {
 
       {/* ───────────────── MOBILE MENU ───────────────── */}
       <div
-        className={`overflow-hidden border-t border-white/6] bg-[#090A0F] transition-all duration-300 lg:hidden ${
-          isMenuOpen
-            ? "max-h-125 opacity-100"
-            : "max-h-0 opacity-0"
-        }`}
+        className={`overflow-hidden border-t border-white/20 bg-[#090A0F] transition-all duration-400 lg:hidden ${isMenuOpen
+          ? "max-h-125 opacity-100"
+          : "max-h-0 opacity-0"
+          }`}
       >
         <div className="px-6 py-5 sm:px-8">
 
           {/* Mobile Navigation */}
-          <div className="flex flex-col">
-            {navItems.map((item, index) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                onClick={() => setIsMenuOpen(false)}
-                className={`border-b border-white/6 py-4 text-[15px] font-medium transition-colors ${
-                  index === 0
-                    ? "text-[#B58CFF]"
-                    : "text-white/70 hover:text-white"
-                }`}
-              >
-                {item.name}
-              </Link>
-            ))}
+          <div className="flex flex-col ">
+            {navItems.map((item, index) => {
+              const isActive = path === item.href;
+              return (
+                <Link
+                  key={index}
+                  href={item.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`group relative p-2 text-[14px]  border-b border-white/5 font-medium transition-colors duration-200 ${isActive
+                    ? "text-shadow-taupe-200 bg-[#1d96ff] rounded-lg px-4"
+                    : "text-white/60 hover:text-white hover:bg-[#1d96ff]/10 rounded-sm"
+                    }`}
+                >
+                  {item.name}
+                </Link>
+              )
+            })}
           </div>
 
           {/* Mobile Actions */}
@@ -172,22 +175,14 @@ const Navbar = () => {
             <Link
               href="#contact"
               onClick={() => setIsMenuOpen(false)}
-              className="flex h-12 flex-1 items-center justify-center gap-3 rounded-full bg-[#B58CFF] text-sm font-semibold text-[#0B0712]"
+              className="w-full"
             >
-              Let&apos;s Connect
+              <Button className="flex w-full items-center justify-center gap-3 rounded-full text-sm font-semibold">
+                Let&apos;s Connect
+                <ArrowRight />
+              </Button>
 
-              <svg
-                className="h-4.5 w-4.5"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M5 12h14" />
-                <path d="m13 6 6 6-6 6" />
-              </svg>
+
             </Link>
           </div>
         </div>
