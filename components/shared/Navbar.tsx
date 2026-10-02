@@ -29,7 +29,7 @@ const Navbar = () => {
 
 
   return (
-    <nav className="sticky top-0 z-1000 w-full border-b border-white/8 bg-[#090A0F]/95 text-white backdrop-blur-xl">
+    <nav className="sticky top-0 z-1000 w-full border-b border-[rgba(255,255,255,0.08)] bg-[rgba(10, 18, 32, 0.75)] text-white backdrop-blur-xl">
       <div className="mx-auto flex h-19.5 max-w-360 items-center justify-between px-6 sm:px-8 lg:px-14">
 
         {/* ───────────────── BRAND ───────────────── */}
