@@ -141,9 +141,9 @@ const Navbar = () => {
 
       {/* ───────────────── MOBILE MENU ───────────────── */}
       <div
-        className={`overflow-hidden border-t border-white/20 bg-[#090A0F] transition-all duration-400 lg:hidden ${isMenuOpen
-          ? "max-h-125 opacity-100"
-          : "max-h-0 opacity-0"
+        className={`overflow-hidden border-t bg-[#0D1929]/95 backdrop-blur-xl border-white/8 shadow-[0_10px_40px_rgba(0,0,0,0.35)] transition-all duration-400 lg:hidden ${isMenuOpen
+            ? "max-h-125 opacity-100"
+            : "max-h-0 opacity-0"
           }`}
       >
         <div className="px-6 py-5 sm:px-8">
