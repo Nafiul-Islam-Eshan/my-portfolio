@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 import { Toast } from "@heroui/react";
+import InteractiveDotGrid from "@/components/bacground/InteractiveDotGrid";
 
 const firaSans = Fira_Sans({
   weight: ["400", "500", "600", "700", '800'],
@@ -24,6 +25,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-screen flex flex-col bg-[#0A1220] text-slate-100">
         <Navbar />
         <main className="grow">
+          <InteractiveDotGrid/>
           {children}
           <Toast.Provider />
         </main>

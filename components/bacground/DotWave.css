@@ -1,0 +1,84 @@
+@media (max-width: 768px) {
+  .interactive-dot-grid {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 0;
+  }
+
+  .dot {
+    width: 4px;
+    height: 4px;
+
+    background: rgba(148, 163, 184, 0.14);
+
+    animation: dotWave 6s ease-in-out infinite;
+  }
+
+  /*
+    Create a different animation delay
+    for each column.
+
+    28px = exact grid size.
+  */
+
+  .dot:nth-child(1n) {
+    animation-delay: 0s;
+  }
+
+  .dot:nth-child(2n) {
+    animation-delay: 0.08s;
+  }
+
+  .dot:nth-child(3n) {
+    animation-delay: 0.16s;
+  }
+
+  .dot:nth-child(4n) {
+    animation-delay: 0.24s;
+  }
+
+  .dot:nth-child(5n) {
+    animation-delay: 0.32s;
+  }
+
+  .dot:nth-child(6n) {
+    animation-delay: 0.4s;
+  }
+
+  .dot:nth-child(7n) {
+    animation-delay: 0.48s;
+  }
+
+  .dot:nth-child(8n) {
+    animation-delay: 0.56s;
+  }
+
+  .dot:nth-child(9n) {
+    animation-delay: 0.64s;
+  }
+
+  .dot:nth-child(10n) {
+    animation-delay: 0.72s;
+  }
+
+  @keyframes dotWave {
+    0%,
+    100% {
+      opacity: 0.35;
+      transform: scale(1);
+    }
+
+    50% {
+      opacity: 1;
+      transform: scale(1.6);
+    }
+  }
+}
