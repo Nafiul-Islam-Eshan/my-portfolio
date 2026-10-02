@@ -52,7 +52,7 @@ const ContactMeForm = () => {
     };
 
     return (
-        <div className="px-5 mx-auto">
+        <div className="p-5 mx-auto">
             <h1 className="text-xl lg:text-2xl font-medium text-center">Let&apos;s Connect</h1>
             <p className="text-center text-gray-400">
                 Feel free to reach out to me using the contact form below.
