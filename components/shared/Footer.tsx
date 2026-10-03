@@ -9,7 +9,7 @@ import { FaInstagram } from 'react-icons/fa';
 
 const Footer = () => {
     return (
-        <footer className='bg-[#070E19] px-2.5 sm:px-4 md:px-7 lg:px-16 py-16 flex flex-col gap-5 md:flex-row items-center md:justify-between z-10'>
+        <footer className='bg-[#070E19] px-2.5 sm:px-4 md:px-7 lg:px-16 py-16 flex flex-col gap-5 md:flex-row items-center md:justify-between'>
             <div className="">
                 {/* Name */}
                 <div className="flex gap-2">

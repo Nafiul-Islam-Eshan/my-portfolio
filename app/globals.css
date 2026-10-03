@@ -1,2 +1,7 @@
 @import "tailwindcss";
 @import "@heroui/styles";
+
+body > *:not(.interactive-dot-grid) {
+  position: relative;
+  z-index: 1;
+}

@@ -22,13 +22,19 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${firaSans.className} h-full antialiased`}
     >
-      <body className="min-h-screen flex flex-col bg-[#0A1220] text-slate-100">
+      <body className="min-h-screen flex flex-col content-between bg-[#0A1220] text-slate-100">
+        <InteractiveDotGrid />
+
         <Navbar />
-        <main className="grow">
-          <InteractiveDotGrid/>
+
+        <main className="flex-1">
+
           {children}
+
           <Toast.Provider />
+
         </main>
+
         <Footer />
       </body>
     </html>
