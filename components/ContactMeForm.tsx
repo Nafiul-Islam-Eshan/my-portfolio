@@ -13,6 +13,7 @@ import {
 } from "@heroui/react";
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
+import SectionHeading from "./shared/SectionHeading";
 
 
 const ContactMeForm = () => {
@@ -52,9 +53,11 @@ const ContactMeForm = () => {
     };
 
     return (
-        <div id="contact" className="p-5 mx-auto">
-            <h1 className="text-xl lg:text-2xl font-medium text-center">Let&apos;s Connect</h1>
-            <p className="text-center text-gray-400">
+        <div id="contact" className="p-5 mx-auto mb-30">
+            {/* <h1 className="text-xl lg:text-2xl font-medium text-center">Let&apos;s Connect</h1> */}
+
+            <SectionHeading text="Let's Connect"/>
+            <p className="text-center mt-2 text-gray-400">
                 Feel free to reach out to me using the contact form below.
             </p>
             <Form className="flex flex-col gap-3" onSubmit={handleFormSubmit}>
