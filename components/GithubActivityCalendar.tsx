@@ -2,7 +2,7 @@ import { GitHubCalendar } from 'react-github-calendar';
 
 const GithubActivityCalendar = () => {
     return (
-        <div className="my-5 w-full overflow-x-auto ">
+        <div className="mt-25 w-full overflow-x-auto ">
             <div className="min-w-max px-2 flex justify-center">
                 <GitHubCalendar
                     username="nafiul-islam-eshan"
