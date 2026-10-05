@@ -1,55 +1,18 @@
 "use client";
 
-import {
-    bootstrap,
-    c,
-    cpp,
-    css,
-    github,
-    html,
-    js,
-    nextjs,
-    nodejs,
-    python,
-    vscode,
-    tailwind,
-    ts,
-    reactjs,
-    mongodb,
-} from "@/assets";
 
 import { motion } from "motion/react";
 import Image from "next/image";
 import SectionHeading from "./shared/SectionHeading";
+import {technologies} from '@/utils/Technologies'
 
-type Technology = {
-    name: string;
-    icon: unknown;
-};
 
-const technologies: Technology[] = [
-    { name: "HTML", icon: html },
-    { name: "CSS", icon: css },
-    { name: "JavaScript", icon: js },
-    { name: "TypeScript", icon: ts },
-    { name: "C", icon: c },
-    { name: "C++", icon: cpp },
-    { name: "Python", icon: python },
-    { name: "Node.js", icon: nodejs },
-    { name: "Next.js", icon: nextjs },
-    { name: "Tailwind CSS", icon: tailwind },
-    { name: "Bootstrap", icon: bootstrap },
-    { name: "GitHub", icon: github },
-    { name: "VS Code", icon: vscode },
-    { name: "React", icon: reactjs },
-    { name: "MongoDB", icon: mongodb },
-];
 
 const TechMarquee = () => {
     return (
         <div className="flex flex-col items-center my-30">
             <div className="relative text-center">
-                <SectionHeading text="What Technologies I Know?"/>
+                <SectionHeading text="What Technologies I Know?" />
             </div>
             <div className="relativen mt-10 w-full overflow-hidden py-4 lg:w-[70%]">
 

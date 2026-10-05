@@ -5,7 +5,7 @@ import { whatICanDo } from '@/utils/WhatICanDo'
 const WhatICanDo = () => {
     // console.log(whatICanDo);
     return (
-        <div className="mb-30">
+        <div className="mb-30  lg:mx-45">
             <SectionHeading text="What I Can Do?"/>  
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 ">
                 {

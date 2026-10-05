@@ -6,7 +6,7 @@ import WhatICanDo from './WhatICanDo';
 
 const LandingPage = () => {
     return (
-        <div className='w-full' >
+        <div className='w-full lg:w-[90%]' >
             <GithubActivityCalendar />
             <TechMarquee />
             <WhatICanDo />

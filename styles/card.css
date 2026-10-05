@@ -61,7 +61,7 @@
    Content
 -------------------------------- */
 
-.skill-card__content {
+.skill-card-content {
     position: relative;
     z-index: 2;
 
@@ -76,7 +76,7 @@
    Title
 -------------------------------- */
 
-.skill-card__title {
+.skill-card-title {
     margin: 0 0 14px;
 
     font-size: 1.25rem;
@@ -88,7 +88,7 @@
     transition: color 0.3s ease;
 }
 
-.skill-card:hover .skill-card__title {
+.skill-card:hover .skill-card-title {
     color: #FFFFFF;
 }
 
@@ -97,7 +97,7 @@
    Description
 -------------------------------- */
 
-.skill-card__description {
+.skill-card-description {
     margin: 0;
 
     max-width: 90%;
@@ -111,7 +111,7 @@
     transition: color 0.3s ease;
 }
 
-.skill-card:hover .skill-card__description {
+.skill-card:hover .skill-card-description {
     color: rgba(255, 255, 255, 0.82);
 }
 
@@ -120,7 +120,7 @@
    Technologies
 -------------------------------- */
 
-.skill-card__technologies {
+.skill-card-technologies {
     position: relative;
     z-index: 3;
 
@@ -137,7 +137,7 @@
    Corner
 -------------------------------- */
 
-.skill-card__corner {
+.skill-card-corner {
     position: absolute;
     z-index: 5;
 
@@ -164,7 +164,7 @@
         height 0.3s ease;
 }
 
-.skill-card:hover .skill-card__corner {
+.skill-card:hover .skill-card-corner {
     width: 48px;
     height: 48px;
 }
@@ -174,7 +174,7 @@
    Arrow
 -------------------------------- */
 
-.skill-card__arrow {
+.skill-card-arrow {
     margin-top: -3px;
     margin-right: -3px;
 
