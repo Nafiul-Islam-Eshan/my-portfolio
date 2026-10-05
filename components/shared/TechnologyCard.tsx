@@ -6,11 +6,9 @@ interface TechnologyCardType{
 }
 const TechnologyCard = ({technology} : TechnologyCardType) => {
     const tech = technologies.find((tech) => tech.name === technology);
-    
-    console.log({technology, tech}, "technology card");
-    // const { name, icon } = technologies
+
     return (
-        <div>
+        <div className="flex flex-col gap-3 items-center">
             <Image
                 src={tech?.icon as string}
                 alt={tech?.name as string}
