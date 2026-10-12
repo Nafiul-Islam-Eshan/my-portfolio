@@ -162,21 +162,10 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Actions */}
-          <div className="mt-5 flex items-center gap-3">
+          <div className="mt-5 flex items-center gap-3 w-full">
 
             {/* Connect */}
-            <Link
-              href="#contact"
-              onClick={() => setIsMenuOpen(false)}
-              className="w-full"
-            >
-              <Button className="flex w-full items-center justify-center gap-3 rounded-full text-sm font-semibold">
-                Let&apos;s Connect
-                <ArrowRight />
-              </Button>
-
-
-            </Link>
+            <DownloadCvBtn/>
           </div>
         </div>
       </div>

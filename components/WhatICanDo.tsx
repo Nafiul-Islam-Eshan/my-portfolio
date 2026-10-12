@@ -7,7 +7,7 @@ const WhatICanDo = () => {
     return (
         <div className="mb-30  lg:mx-45">
             <SectionHeading text="What I Can Do?"/>  
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 ">
+            <div className="grid grid-cols-1 mx-4 sm:mx-8 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
                 {
                     whatICanDo.map((item, idx) => {
                         const {title, description, technologies} = item
