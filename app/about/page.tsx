@@ -1,8 +1,8 @@
 
 const AboutPage = () => {
     return (
-        <div>
-            This About page
+        <div className="text-2xl font-medium flex justify-center items-center text-blue-500">
+            About page is cooking...
         </div>
     );
 };

@@ -2,8 +2,8 @@ import React from 'react';
 
 const SkillsPage = () => {
     return (
-        <div>
-            Skills Page
+        <div className="text-2xl font-medium flex justify-center items-center text-blue-500">
+            Skills Page are cooking...
         </div>
     );
 };

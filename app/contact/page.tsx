@@ -1,8 +1,8 @@
 
 const ContactPage = () => {
     return (
-        <div>
-            Contact Page
+        <div className="text-2xl font-medium flex justify-center items-center text-blue-500">
+            Contact Page is cooking...
         </div>
     );
 };
