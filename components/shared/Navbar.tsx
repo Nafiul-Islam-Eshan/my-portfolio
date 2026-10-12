@@ -7,6 +7,7 @@ import logo from '@/app/favicon.ico'
 import { usePathname } from "next/navigation";
 import { Button } from "@heroui/react";
 import { ArrowRight } from "@gravity-ui/icons";
+import DownloadCvBtn from "./DownloadCvBtn";
 
 type NavItemType = {
   name: string;
@@ -89,17 +90,9 @@ const Navbar = () => {
         <div className="ml-10 hidden items-center gap-5 lg:flex">
 
           {/* Let's Connect */}
-          <Link
-            href="#contact"
-
-          >
-            <Button className="group flex items-center gap-2 rounded-full  bg-[#0485F7]  px-7 text-[14px] font-semibold  transition-all duration-200 hover:shadow-[0_0_20px_rgba(181,140,255,0.25)]">
-              <span>Let&apos;s Connect</span>
-              <ArrowRight className="h-4.5 w-4.5 transition-transform duration-300 group-hover:translate-x-1" />
-            </Button>
-
-
-          </Link>
+          <div>
+            <DownloadCvBtn/>
+          </div>
         </div>
 
         {/* ───────────── MOBILE MENU BUTTON ───────────── */}
@@ -142,8 +135,8 @@ const Navbar = () => {
       {/* ───────────────── MOBILE MENU ───────────────── */}
       <div
         className={`overflow-hidden border-t bg-[#0D1929]/95 backdrop-blur-xl border-white/8 shadow-[0_10px_40px_rgba(0,0,0,0.35)] transition-all duration-400 lg:hidden ${isMenuOpen
-            ? "max-h-125 opacity-100"
-            : "max-h-0 opacity-0"
+          ? "max-h-125 opacity-100"
+          : "max-h-0 opacity-0"
           }`}
       >
         <div className="px-6 py-5 sm:px-8">
