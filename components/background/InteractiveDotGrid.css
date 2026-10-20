@@ -1,0 +1,25 @@
+.interactive-dot-grid {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  /* Fades the texture out towards the bottom of the viewport. */
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
+}
+
+.dot {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 9999px;
+  background: rgba(148, 163, 184, 0.16);
+  transform-origin: center;
+  transition: transform 140ms ease-out, opacity 140ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dot {
+    transition: none;
+  }
+}
