@@ -21,7 +21,7 @@ export const siteConfig = {
   githubUsername: "Nafiul-Islam-Eshan",
   links: {
     github: "https://github.com/Nafiul-Islam-Eshan",
-    linkedin: "https://www.linkedin.com/in/md-nafiul-islam/",
+    linkedin: "https://www.linkedin.com/in/md-nafiul-islam-402802377",
     email: "mailto:nafiulislameshan307@gmail.com",
     cv: "/CV.pdf",
   },
