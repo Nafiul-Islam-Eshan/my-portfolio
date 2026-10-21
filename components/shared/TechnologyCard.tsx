@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Tag from "@/components/shared/Tag";
-import { getTechnology } from "@/utils/Technologies";
+import { getTechnology } from "@/utils/technologies";
 
 type TechnologyCardProps = {
   name: string;

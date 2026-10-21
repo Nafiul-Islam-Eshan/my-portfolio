@@ -8,6 +8,7 @@ import TechnologyCard from "@/components/shared/TechnologyCard";
 import { siteConfig } from "@/utils/site";
 import { skillGroups, currentlyLearning } from "@/utils/skills";
 import { technologies } from "@/utils/technologies";
+import { Nafiul } from "@/assets";
 
 export const metadata: Metadata = {
   title: "About",
@@ -77,22 +78,20 @@ export default function AboutPage() {
           <aside className="flex flex-col gap-5">
             <div className="surface-card flex flex-col items-center p-6 text-center">
               <div className="relative size-28 overflow-hidden rounded-full border border-line bg-surface-raised">
-                <Image
-                  src="/programmer.png"
-                  alt="Illustration used as a placeholder avatar"
-                  fill
-                  sizes="112px"
-                  className="object-contain p-3"
-                />
+                <div className="relative h-28 w-28 overflow-hidden rounded-full">
+                  <Image
+                    src={Nafiul}
+                    alt="Nafiul Islam"
+                    fill
+                    sizes="112px"
+                    className="object-cover"
+                  />
+                </div>
               </div>
               <p className="mt-4 text-sm font-semibold text-white">
                 {siteConfig.name}
               </p>
               <p className="mt-1 text-xs text-slate-500">{siteConfig.headline}</p>
-              <p className="mt-3 text-xs leading-relaxed text-slate-500">
-                A real photograph will replace this illustration once it is
-                available.
-              </p>
             </div>
 
             <dl className="surface-card divide-y divide-line">
