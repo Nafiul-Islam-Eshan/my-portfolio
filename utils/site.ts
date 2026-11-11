@@ -25,7 +25,7 @@ export const siteConfig = {
     email: "mailto:nafiulislameshan307@gmail.com",
     cv: "/CV.pdf",
   },
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://nafiul-islam-portfolio.vercel.app",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://nafiul-islam-portfolio.vercel.app/",
 } as const;
 
 export const navItems = [
