@@ -22,4 +22,4 @@ Notes:
 - `GEMINI_API_KEY` is only read inside `app/api/assistant/route.ts`. If it is missing the assistant
   says so and points visitors to email instead of failing silently.
 - The contact form reports a missing EmailJS configuration in a toast rather than pretending to send.
-- `NEXT_PUBLIC_SITE_URL` falls back to `https://nafiul-islam.vercel.app` when unset.
+- `NEXT_PUBLIC_SITE_URL` falls back to `https://nafiul-islam-portfolio.vercel.app/` when unset.
